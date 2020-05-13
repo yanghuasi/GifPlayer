@@ -25,4 +25,9 @@
         android:layout_width="match_parent"
         android:layout_height="68dp"
         android:text="通过glide播放" />
+    <Button
+        android:id="@+id/button5"
+        android:layout_width="match_parent"
+        android:layout_height="68dp"
+        android:text="通过SurfaceView播放" />
 </LinearLayout>
