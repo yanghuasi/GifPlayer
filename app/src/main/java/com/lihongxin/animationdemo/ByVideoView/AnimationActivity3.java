@@ -1,4 +1,4 @@
-package com.lihongxin.animationdemo.RedPacketsByVideoViewAnimation;
+package com.lihongxin.animationdemo.ByVideoView;
 
 import android.app.Activity;
 import android.media.MediaPlayer;
@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.MediaController;
+import android.widget.RelativeLayout;
+
 import com.lihongxin.animationdemo.R;
 
 /**
@@ -51,6 +54,18 @@ public class AnimationActivity3 extends Activity  {
 
         Log.i("play",uri+"");
 
+
+
+        LinearLayout main = findViewById(R.id.main);
+        main.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //第一个动画播放完成后，播放第二个动画
+                Uri uri=Uri.parse( "android.resource://"+getPackageName()+"/"+R.raw.test2);
+                gifVideoView.setVideoURI(uri);
+                gifVideoView.start();
+            }
+        });
 
     }
     @Override

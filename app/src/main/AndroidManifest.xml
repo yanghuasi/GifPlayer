@@ -9,25 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="com.lihongxin.animationdemo.MainActivity"
-            android:screenOrientation="portrait">
+        <activity android:name="com.lihongxin.animationdemo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.lihongxin.animationdemo.RedPacketsByFrameAnimation.AnimationActivity"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:screenOrientation="portrait">
+        <activity android:name="com.lihongxin.animationdemo.ByFrame.AnimationActivity"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
-        <activity android:name=".RedPacketsByWebviewAnimation.AnimationActivity2"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:screenOrientation="portrait">
+        <activity android:name=".ByWebview.AnimationActivity2"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
-        <activity android:name=".RedPacketsByVideoViewAnimation.AnimationActivity3"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:screenOrientation="portrait">
+        <activity android:name=".ByVideoView.AnimationActivity3"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:name=".ByGlide.AnimationActivity4"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
         </activity>
     </application>
 

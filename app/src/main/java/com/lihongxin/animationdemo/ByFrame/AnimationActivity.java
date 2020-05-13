@@ -1,4 +1,4 @@
-package com.lihongxin.animationdemo.RedPacketsByFrameAnimation;
+package com.lihongxin.animationdemo.ByFrame;
 
 import android.app.Activity;
 import android.os.Bundle;

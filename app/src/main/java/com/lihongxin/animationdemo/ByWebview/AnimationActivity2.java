@@ -1,17 +1,17 @@
-package com.lihongxin.animationdemo.RedPacketsByWebviewAnimation;
+package com.lihongxin.animationdemo.ByWebview;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
-import android.view.GestureDetector;
-import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.lihongxin.animationdemo.R;
 
@@ -41,16 +41,21 @@ public class AnimationActivity2 extends Activity  {
         webSettings.setBuiltInZoomControls(true);//添加对js功能的支持
         webView.setWebViewClient(new WebViewClient());
         webView.setBackgroundColor(0);
+
         String gifPath = "file:///android_asset/animation4.gif";
         webView.loadUrl(gifPath);
         handler=new Handler(){
             @Override
             public void handleMessage(Message msg) {
-              switch (msg.what){
-                  case 0:
-                      webView.destroy();
-                      AnimationActivity2.this.finish();
-              }
+                switch (msg.what){
+                    case 0:
+                        //第一个动画播放完成后，关闭该activity
+//                        webView.destroy();
+//                        AnimationActivity2.this.finish();
+                        //第一个动画播放完成后，播放第二个动画
+                        String gifPath2 = "file:///android_asset/animation5.gif";
+                        webView.loadUrl(gifPath2);
+                }
             }
         };
         new Thread(){
@@ -66,17 +71,17 @@ public class AnimationActivity2 extends Activity  {
                 }
                 long endTime = System.currentTimeMillis();
                 Log.i("test","System.currentTimeMillis()2:"+System.currentTimeMillis());
-                    if (endTime - startTime >4000){
-                        //startTime = endTime;
-                        Message message=new Message();
-                        message.what=0;
-                        handler.sendMessage(message);
+                if (endTime - startTime >4000){
+                    //startTime = endTime;
+                    Message message=new Message();
+                    message.what=0;
+                    handler.sendMessage(message);
 
-                    }
+                }
             }
         } .start();
-
     }
+
     @Override
     public void onBackPressed() {
         super.onBackPressed();

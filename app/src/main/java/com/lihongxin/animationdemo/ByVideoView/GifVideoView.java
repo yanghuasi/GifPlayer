@@ -1,9 +1,8 @@
-package com.lihongxin.animationdemo.RedPacketsByVideoViewAnimation;
+package com.lihongxin.animationdemo.ByVideoView;
 
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
-import android.util.DisplayMetrics;
 import android.widget.VideoView;
 
 /**
